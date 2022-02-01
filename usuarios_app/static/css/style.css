@@ -1,0 +1,210 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: rgb(209, 209, 209);
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 1.5vw;
+    background-color: rgb(63, 63, 63);
+}
+
+.blue-T{
+    color: rgb(12, 113, 160);
+}
+.blue-T:hover{
+    color: rgb(8, 86, 122);
+}
+
+.blue-B{
+    background-color: rgb(12, 113, 160);
+}
+.blue-B:hover{
+    background-color: rgb(8, 86, 122);
+}
+
+.red-T{
+    color: rgb(185, 10, 10);
+}
+.red-T:hover{
+    color: rgb(136, 9, 9);
+}
+
+.red-B{
+    background-color: rgb(185, 10, 10);
+}
+.red-B:hover{
+    background-color: rgb(136, 9, 9);
+}
+
+.green-T{
+    color: rgb(11, 133, 11);
+}
+.green-T:hover{
+    color: rgb(5, 78, 5);
+}
+
+.green-B{
+    background-color: rgb(9, 109, 9);
+}
+.green-B:hover{
+    background-color: rgb(5, 78, 5);
+}
+
+.all{
+    display: flex;
+    margin: 2vw;
+}
+
+.nav{
+    display: flex; 
+    justify-content:space-between;
+    align-items: center;
+    padding: 0px 3vw;
+    background-color:rgb(49, 49, 49);
+    height: 4.3vw;
+}
+
+.titulo-N{
+    flex: 3;
+    font-size: 3vw;
+    text-align: left;
+}
+
+.flex1{
+    flex: 1;
+}
+
+.columna{
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor{
+    flex: 1;
+    padding: 0.1vw 5vw;
+    margin: 0 5vw;
+    border-left: 0.2vw solid white;
+    border-right: 0.2vw solid white;
+}
+
+.error{
+    font-size: 1.2vw;
+    font-weight: bold;
+    border-left: 0.2vw solid white;
+    border-right: 0.2vw solid white;
+}
+
+input{
+    width: 25vw;
+    font-size: 1.3vw;
+    padding: 0.2vw 0.8vw;
+    border-radius: 2vw;
+}
+
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.2vw;
+}
+
+.box > input{
+    width: 4vw;
+}
+
+.btn{
+    color:white;
+    height: 3vw;
+    padding: 0 2vw;
+    margin: 0.5vw;
+    border-radius: 0.3vw;
+    border: 0.2vw solid rgb(8, 8, 8);
+    box-shadow: 0.3vw 0.3vw rgb(8, 8, 8);
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+
+.entrada{
+    margin: 1.5vw 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.entrada > .box{
+    font-size: 1.4vw;
+    justify-content: space-between;
+}
+
+.contenedor2{
+    display: flex;
+    margin: 2vw 3vw;
+    justify-content: space-between;
+}
+
+.box2{
+    flex: 1;
+    border-left: 0.2vw solid white;
+    border-right: 0.2vw solid white;
+    padding: 0 3vw;
+    
+}
+
+.box3{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    height: 3vw;
+    margin-top: 2vw;
+}
+
+.box3 > p{
+    margin-top: 2.2vw;
+}
+
+.btn2{
+    height: 2.8vw;
+    padding: 0 0.3vw;
+    font-size: 1.5vw;
+}
+
+h2{
+    margin: 0.5vw 8.6vw;
+    padding: 0.5vw 0;
+    border-bottom: 0.2vw solid white;
+}
+
+h4{
+    color: rgb(12, 113, 160);
+    font-weight: normal;
+    font-size: 1.8vw;
+    margin: 0;
+}
+
+.destinatario{
+    margin: 1.5vw 0 0.3vw 0;
+    text-align: left;
+}
+
+.recibido{
+    background-color: white;
+    font-size: 1.2vw;
+    height: 4vw;
+    font-family:'Courier New', Courier, monospace;
+    text-align: left;
+    color: black;
+    margin: 0.5vw 0.3vw 0 0;
+    padding: 0.5vw;
+}
+
+.mensaje{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1vw;
+}
+
+textarea{
+    width: 27vw;
+    height: 4.5vw;
+    margin-right: 3vw;
+}

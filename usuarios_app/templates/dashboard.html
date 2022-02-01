@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Dashboard
+        </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css') }}">
+    </head>
+    <body>
+        <div class="nav">
+            <h1 class="blue-T titulo-N">
+                Coding Dojo Wall
+            </h1>
+            <h3 class="flex1">
+                {{variables[0]}}, {{variables[3]}}
+            </h3>
+            <form action="/logout" method="POST">
+                <button type="submit" class="btn red-B flex1"> 
+                    Cerrar sesión 
+                </button>
+            </form>
+        </div>
+        <div class="contenedor2">
+            <div class="box2">
+                <h2>
+                    Tienes {{variables[1]}} mensaje(s)
+                </h2>
+                {% for message in listaMessages %}
+                    <div class="columna">
+                        <div class="box3">
+                            <p>
+                                {{message["send"]}} escribió el {{message["messages.update_at"]}}:
+                            </p>
+                            <form action="/delete/{{message['messages.id']}}" method="POST">
+                                <button type="submit" class="btn btn2 red-B"> 
+                                    ⌫
+                                </button>
+                            </form>
+                        </div>
+                        <p class="recibido">
+                            {{message["content"]}}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="box2">
+                <h2>
+                    Enviar Mensajes
+                </h2>
+                <h4>
+                    Usted ha enviado {{variables[2]}} mensajes
+                </h4>
+                {% with messages = get_flashed_messages(category_filter=['dashboard']) %} 
+                    {% for message in messages %}
+                        <p class="red-T">
+                            {{message}}
+                        </p>
+                    {% endfor %}
+                {% endwith %}
+                {% for users in listaUsers %}
+                    <div class="columna">
+                        <p class="destinatario">
+                            Mensaje para {{users["first_name"]}}:
+                        </p>
+                        <form action="/send/{{users['id']}}" method="POST" class="mensaje">
+                            <textarea placeholder="Escribe aqui tu mensaje..." id="content" name="content"></textarea>
+                            <input type="hidden" id="send" name="send" value="{{variables[0]}}">
+                            <button type="submit" class="btn blue-B flex1"> 
+                                Enviar 
+                            </button>
+                        </form>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

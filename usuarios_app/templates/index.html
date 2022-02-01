@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Registro y Login
+        </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css') }}">
+    </head>
+    <body>
+        <div class="nav">
+            <h1 class="blue-T titulo-N">
+                Coding Dojo Wall
+            </h1>
+        </div>
+        <div class="all">
+            <div class="contenedor">
+                <h1 class="blue-T titulo">
+                    Registro
+                </h1>
+                <div class="error red-T">
+                    {% with messages = get_flashed_messages(category_filter=['register']) %}
+                        {% for message in messages %}
+                            <p>
+                                {{message}}
+                            </p>
+                        {% endfor %}
+                    {% endwith %}
+                </div>
+                <form action="/registrar" method="POST">
+                    <div class="entrada">
+                        <label for="first_name">
+                            Nombre:
+                        </label> 
+                        <input type="text" id="first_name" name="first_name" />
+                    </div>
+                    <div class="entrada">
+                        <label for="last_name">
+                            Apellido:
+                        </label> 
+                        <input type="text" id="last_name" name="last_name" />
+                    </div>
+                    <div class="entrada">
+                        <label for="email">
+                            E-mail:
+                        </label> 
+                        <input type="text" id="email" name="email" />
+                    </div>
+                    <div class="entrada">
+                        <label for="password">
+                            Password:
+                        </label> 
+                        <input type="password" id="password" name="password" />
+                    </div>
+                    <div class="entrada">
+                        <label for="confirmarPassword">
+                            Confirmar passsword:
+                        </label>
+                        <input type="password" id="confirmarPassword" name="confirmarPassword" />
+                    </div>
+                    <div class="entrada">
+                        <label for="gender">
+                            Elija su sexo:
+                        </label>
+                        <div class="box">
+                            <input type="radio" id="gender" name="gender" value="male">
+                            <label for="gender">Male</label>
+                            <input type="radio" id="gender" name="gender" value="female">
+                            <label for="gender">Female</label>
+                            <input type="radio" id="gender" name="gender" value="nada" checked>
+                            <label for="gender">No elije</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="blue-B btn">
+                        Registrar
+                    </button>
+                </form>
+            </div>
+            <div class="contenedor">
+                <h1 class="green-T titulo">
+                    Login
+                </h1>
+                <div class="error red-T">
+                    {% with messages = get_flashed_messages(category_filter=['login']) %} 
+                        {% for message in messages %}
+                            <p>
+                                {{message}}
+                            </p>
+                        {% endfor %}
+                    {% endwith %}
+                </div>
+                <form action="/ingresar" method="POST">
+                    <div class="entrada">
+                        <label for="emailUsuario">
+                            E-mail:
+                        </label> 
+                        <input type="text" id="emailUsuario" name="emailUsuario" />
+                    </div>
+                    <input type="hidden" value="12345" id="oculto" name="oculto" />
+                    <div class="entrada"> 
+                        <label for="passwordUsuario">
+                            Password:
+                        </label> 
+                        <input type="password" id="passwordUsuario" name="passwordUsuario" />
+                    </div>
+                    <button type="submit" class="green-B btn">
+                        Login
+                    </button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
